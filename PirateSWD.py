@@ -4,7 +4,7 @@ from SWDErrors import *
 
 class PirateSWD:
     def __init__ (self, f = "/dev/bus_pirate"):
-        self.port = serial.Serial(port = f, baudrate = 115200, timeout = 0.01)
+        self.port = serial.Serial(port = f, baudrate = 115200, timeout = 0.1)
         self.resetBP()
         self.sendBytes([0xFF] * 8)
         self.sendBytes([0x79, 0xE7])
